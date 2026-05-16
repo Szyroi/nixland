@@ -1,5 +1,5 @@
 {
-  self,
+  inputs,
   config,
   lib,
   ...
@@ -16,6 +16,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."hypr".source = "${self}/hyprland/${cfg.profile}";
+    xdg.configFile."hypr".source = "${inputs.nixland}/hyprland/${cfg.profile}";
   };
 }
