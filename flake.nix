@@ -6,6 +6,6 @@
   };
 
   outputs = {self, ...}: {
-    homeManagerModules.default = import ./hyprland/default.nix;
+    homeManagerModules.default = import ./hl/default.nix;
   };
 }
