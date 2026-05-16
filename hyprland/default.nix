@@ -16,17 +16,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    programs.hyprland = {
-      enable = true;
-      package = pkgs.hyprland;
-    };
-
-    home.packages = with pkgs; [
-      hyprpaper
-      wofi
-      kitty
-    ];
-
     home.file.".config/hypr".source =
       self + "/hyprland/${cfg.profile}";
   };
