@@ -6,7 +6,7 @@
 }: let
   cfg = config.nixland;
 in {
-  options.nixLand = {
+  options.nixland = {
     enable = lib.mkEnableOption "Enable Hyprland config";
 
     profile = lib.mkOption {
@@ -27,9 +27,7 @@ in {
       kitty
     ];
 
-    home.file.".config/hypr/".source =
-      if cfg.profile == "laptop"
-      then self + /hyprland/laptop
-      else self + /hyprland/desktop;
+    home.file.".config/hypr".source =
+      self + "/hyprland/${cfg.profile}";
   };
 }
