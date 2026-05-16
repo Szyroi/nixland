@@ -1,0 +1,12 @@
+hl.config({
+	input = {
+		kb_layout = "de",
+		follow_mouse = 1,
+		numlock_by_default = true,
+		accel_profile = "flat",
+		sensitivity = 0,
+		touchpad = {
+			natural_scroll = true,
+		},
+	},
+})
