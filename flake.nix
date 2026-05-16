@@ -6,8 +6,8 @@
   };
 
   outputs = {self, ...}: {
-    homeManagerModules.default = import ./hyprland/default.nix {
-      inherit self;
+    homeManagerModules = {
+      default = import ./hyprland/default.nix {inherit self;};
     };
   };
 }
