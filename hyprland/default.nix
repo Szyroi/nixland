@@ -1,6 +1,6 @@
-{self}: {
+{
+  self,
   config,
-  pkgs,
   lib,
   ...
 }: let
@@ -16,7 +16,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.file.".config/hypr".source =
-      self + "/hyprland/${cfg.profile}";
+    xdg.configFile."hypr".source = "${self}/hyprland/${cfg.profile}";
   };
 }
