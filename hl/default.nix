@@ -1,14 +1,14 @@
 {
-  inputs,
   config,
   lib,
+  pkgs,
+  inputs,
   ...
 }: let
   cfg = config.nixland;
 in {
   options.nixland = {
-    enable = lib.mkEnableOption "Enable Hyprland config";
-
+    enable = lib.mkEnableOption "Hyprland config";
     profile = lib.mkOption {
       type = lib.types.enum ["desktop" "laptop"];
       default = "desktop";
