@@ -6,7 +6,7 @@
   };
 
   outputs = {self, ...}: {
-    nixosModules.default = import ./hyprland/default.nix {
+    homeModules.default = import ./hyprland/default.nix {
       inherit self;
     };
   };
