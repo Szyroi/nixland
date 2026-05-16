@@ -21,7 +21,7 @@ in {
       package = pkgs.hyprland;
     };
 
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       hyprpaper
       wofi
       kitty
