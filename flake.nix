@@ -1,20 +1,11 @@
 {
-  description = "My Hyprland config";
+  description = "nixland - Hyprland home-manager module";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {self, ...}: {
-    homeManagerModules = {
-      nixland = ./hyprland/default.nix;
-      default = self.nixland.homeManagerModules.nixland;
-    };
-
-    homeManagerModule = self.homeManagerModules.nixland;
+    homeManagerModules.default = import ./hyprland/default.nix;
   };
 }
